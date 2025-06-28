@@ -1,29 +1,38 @@
 import { useState } from "react";
 import Warning from "./Warning";
+import { bannedWords } from "../lib/bannedWords";
 
 export default function Textarea({ text, setText }) {
-  const [warningText, setwarningText] = useState("");
+  const [warningText, setWarningText] = useState("");
 
-  const handleClick = (event) => {
-    let userText = event.target.value;
-    if (userText.includes("Angular")) {
-      setwarningText(`The word "Angular" is not allowed!`);
-      userText = userText.replace("Angular", "");
+  const handleChange = (event) => {
+    const userText = event.target.value;
+    const userTextLower = userText.toLowerCase();
+
+    const matchedWord = bannedWords.find((bannedWord) =>
+      userTextLower.includes(bannedWord.toLowerCase())
+    );
+
+    if (matchedWord) {
+      setWarningText(`You typed a forbidden word: '${matchedWord}'`);
+      const regex = new RegExp(matchedWord, "gi");
+      const filteredText = userText.replace(regex, "");
+      setText(filteredText);
     } else {
-      setwarningText("");
+      setWarningText("");
+      setText(userText);
     }
-    setText(userText);
   };
 
   return (
     <div className="textarea">
       <textarea
-        onChange={handleClick}
+        onChange={handleChange}
         placeholder="Enter your text"
         spellCheck="false"
         value={text}
       />
-      {warningText ? <Warning warningText={warningText} /> : null}
+      {warningText && <Warning warningText={warningText} />}
     </div>
   );
 }
