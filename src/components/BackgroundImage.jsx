@@ -1,3 +1,3 @@
 export default function BackgroundImage() {
-  return <div />;
+  return <div className="bg" />;
 }

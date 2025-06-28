@@ -1,15 +1,14 @@
 import { useState } from "react";
 import Warning from "./Warning";
 
-export default function Textarea() {
-  const [text, setText] = useState("");
+export default function Textarea({ text, setText }) {
   const [warningText, setwarningText] = useState("");
 
   const handleClick = (event) => {
     let userText = event.target.value;
-    if (userText.includes("test")) {
-      setwarningText(`The word "test" is not allowed!`);
-      userText = userText.replace("test", "");
+    if (userText.includes("Angular")) {
+      setwarningText(`The word "Angular" is not allowed!`);
+      userText = userText.replace("Angular", "");
     } else {
       setwarningText("");
     }
@@ -17,7 +16,7 @@ export default function Textarea() {
   };
 
   return (
-    <div>
+    <div className="textarea">
       <textarea
         onChange={handleClick}
         placeholder="Enter your text"

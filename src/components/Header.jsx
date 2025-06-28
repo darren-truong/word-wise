@@ -1,11 +1,11 @@
 import BackgroundImage from "./BackgroundImage";
-import H1 from "./H1";
+import Title from "./Title";
 
 export default function Header() {
   return (
     <header>
       <BackgroundImage />
-      <H1 />
+      <Title />
     </header>
   );
 }
