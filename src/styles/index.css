@@ -23,12 +23,7 @@ body {
   z-index: -1;
   height: 250px;
   width: 100%;
-  background-image: linear-gradient(
-      to right,
-      rgba(69, 8, 103, 0.9),
-      rgba(0, 163, 54, 0.9)
-    ),
-    url("../assets/waves.png");
+  background-image: url("../assets/andreas-fickl-o1xcUi-Yt_w-unsplash.jpg");
 }
 
 .first__heading {
