@@ -4,11 +4,11 @@
 
 ## Features
 
-- **Live word and character counting**
-- **Simulated Twitter/X Free and Paid posting scores**
-- **Forbidden word detection with instant alerts**
-- **Clean, responsive React-based UI**
-- **User-friendly prompts and feedback**
+- [x] Live word and character counting
+- [x] Simulated Twitter/X Free and Paid posting scores
+- [x] Forbidden word detection with instant alerts
+- [x] Clean, responsive React-based UI
+- [x] User-friendly prompts and feedback
 
 ## Technologies Used
 
