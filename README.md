@@ -16,5 +16,4 @@
 - CSS
 - JavaScript
 - React
-
-- Project scaffolded with Vite
+- Vite
